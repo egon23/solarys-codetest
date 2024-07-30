@@ -215,6 +215,10 @@
 				Base,
 			);
 			mainGroup = 7AFE517E2C5912250073B81B;
+			packageReferences = (
+				7AFE51B42C59175E0073B81B /* XCRemoteSwiftPackageReference "Moya" */,
+				7AFE51B52C591A220073B81B /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 7AFE51882C5912250073B81B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -588,6 +592,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7AFE51B42C59175E0073B81B /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
+		7AFE51B52C591A220073B81B /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 7AFE517F2C5912250073B81B /* Project object */;
 }
