@@ -1,25 +1,31 @@
 //
-//  AudioManager.swift
+//  DetailViewModel.swift
 //  solarys-codetest
 //
-//  Created by Egon Manya on 01.08.24.
+//  Created by Egon Manya on 02.08.24.
 //
 
-import AVFoundation
 import SwiftUI
+import AVFoundation
+import RealmSwift
 
-class AudioManager: ObservableObject {
+class DetailViewModel: ObservableObject {
+    @Published var wordDetail: WordDetail
     @Published var isPlaying: Bool = false
-    @Published var phoneticId: UUID?
+    @Published var currentPlayingPhoneticId: UUID?
     private var audioPlayer: AVPlayer?
     
-    func playPauseSound(url: String, id: UUID) {
+    init(wordDetail: WordDetail) {
+        self.wordDetail = wordDetail
+    }
+    
+    func playPauseSound(for url: String, id: UUID) {
         let completeUrl = url.hasPrefix("http") ? url : "https:\(url)"
         guard let url = URL(string: completeUrl) else {
             print("Invalid URL: \(completeUrl)")
             return
         }
-        phoneticId = id
+        currentPlayingPhoneticId = id
         
         if isPlaying {
             // Pause the audio
@@ -42,3 +48,4 @@ class AudioManager: ObservableObject {
         }
     }
 }
+

@@ -8,33 +8,35 @@
 import SwiftUI
 
 struct DetailView: View {
-    let wordDetail: WordDetail
-    @ObservedObject private var audioManager = AudioManager()
+    @StateObject private var viewModel: DetailViewModel
+    
+    init(wordDetail: WordDetail) {
+        _viewModel = StateObject(wrappedValue: DetailViewModel(wordDetail: wordDetail))
+    }
     
     var body: some View {
         VStack {
             Form {
                 VStack {
-                    Text(wordDetail.word)
+                    Text(viewModel.wordDetail.word)
                         .font(.largeTitle)
                         .padding(.bottom, 0)
-                    if let phonetic = wordDetail.phonetic {
+                    if let phonetic = viewModel.wordDetail.phonetic {
                         Text(phonetic)
                             .padding(.vertical, 4)
                     }
                 }
                 
-                
-                if let origin = wordDetail.origin {
+                if let origin = viewModel.wordDetail.origin {
                     Section(header: Text("Origin").font(.headline)) {
                         Text(origin)
                             .padding(.vertical)
                     }
                 }
                 
-                if !wordDetail.phonetics.isEmpty {
+                if !viewModel.wordDetail.phonetics.isEmpty {
                     Section(header: Text("Phonetics").font(.headline)) {
-                        ForEach(wordDetail.phonetics, id: \.id) { phonetic in
+                        ForEach(viewModel.wordDetail.phonetics, id: \.id) { phonetic in
                             HStack {
                                 if let text = phonetic.text {
                                     Text(text)
@@ -51,9 +53,9 @@ struct DetailView: View {
                     }
                 }
                 
-                if !wordDetail.meanings.isEmpty {
+                if !viewModel.wordDetail.meanings.isEmpty {
                     Section(header: Text("Meanings").font(.headline)) {
-                        ForEach(wordDetail.meanings, id: \.self) { meaning in
+                        ForEach(viewModel.wordDetail.meanings, id: \.self) { meaning in
                             VStack(alignment: .leading, spacing: 8) {
                                 Text(meaning.partOfSpeech.capitalized)
                                     .font(.subheadline)
@@ -79,15 +81,15 @@ struct DetailView: View {
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle(wordDetail.word)
+            .navigationTitle(viewModel.wordDetail.word)
         }
     }
     
     func audioPlayer(url: String, id: UUID) -> some View {
         return Button(action: {
-            audioManager.playPauseSound(url: url, id: id)
+            viewModel.playPauseSound(for: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3", id: id)
         }) {
-            Image(systemName: (audioManager.isPlaying && audioManager.phoneticId == id) ? "pause.circle" : "play.circle")
+            Image(systemName: (viewModel.isPlaying && viewModel.currentPlayingPhoneticId == id) ? "pause.circle" : "play.circle")
                 .font(.title)
                 .foregroundColor(.blue)
         }
