@@ -29,6 +29,7 @@ class DictionaryService {
                         completion(.failure(NSError(domain: "No word found", code: 404, userInfo: nil)))
                     }
                 } catch let error {
+                    print("Decoding error: \(error)")
                     completion(.failure(error))
                 }
             case .failure(let error):

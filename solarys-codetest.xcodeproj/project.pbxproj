@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7AFE518B2C5912250073B81B /* solarys_codetestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFE518A2C5912250073B81B /* solarys_codetestApp.swift */; };
-		7AFE518D2C5912250073B81B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFE518C2C5912250073B81B /* ContentView.swift */; };
+		7AFE518D2C5912250073B81B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFE518C2C5912250073B81B /* MainView.swift */; };
 		7AFE518F2C5912270073B81B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AFE518E2C5912270073B81B /* Assets.xcassets */; };
 		7AFE51922C5912270073B81B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AFE51912C5912270073B81B /* Preview Assets.xcassets */; };
 		7AFE519C2C5912270073B81B /* solarys_codetestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFE519B2C5912270073B81B /* solarys_codetestTests.swift */; };
@@ -21,6 +21,10 @@
 		7AFE51C12C5926C70073B81B /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 7AFE51C02C5926C70073B81B /* Moya */; };
 		7AFE51C32C59272A0073B81B /* WordDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFE51C22C59272A0073B81B /* WordDetail.swift */; };
 		7AFE51C52C5927A00073B81B /* DictionaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFE51C42C5927A00073B81B /* DictionaryService.swift */; };
+		7AFE51C82C592B780073B81B /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFE51C72C592B780073B81B /* DetailView.swift */; };
+		7AFE51CB2C5A4D850073B81B /* Meaning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFE51CA2C5A4D850073B81B /* Meaning.swift */; };
+		7AFE51CD2C5A4DC70073B81B /* Definition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFE51CC2C5A4DC70073B81B /* Definition.swift */; };
+		7AFE51CF2C5C39990073B81B /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFE51CE2C5C39990073B81B /* AudioManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +61,7 @@
 /* Begin PBXFileReference section */
 		7AFE51872C5912250073B81B /* solarys-codetest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "solarys-codetest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AFE518A2C5912250073B81B /* solarys_codetestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = solarys_codetestApp.swift; sourceTree = "<group>"; };
-		7AFE518C2C5912250073B81B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7AFE518C2C5912250073B81B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		7AFE518E2C5912270073B81B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7AFE51912C5912270073B81B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7AFE51972C5912270073B81B /* solarys-codetestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "solarys-codetestTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +73,11 @@
 		7AFE51B92C59265A0073B81B /* Phonetic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phonetic.swift; sourceTree = "<group>"; };
 		7AFE51C22C59272A0073B81B /* WordDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDetail.swift; sourceTree = "<group>"; };
 		7AFE51C42C5927A00073B81B /* DictionaryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryService.swift; sourceTree = "<group>"; };
+		7AFE51C72C592B780073B81B /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		7AFE51C92C5938140073B81B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7AFE51CA2C5A4D850073B81B /* Meaning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meaning.swift; sourceTree = "<group>"; };
+		7AFE51CC2C5A4DC70073B81B /* Definition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Definition.swift; sourceTree = "<group>"; };
+		7AFE51CE2C5C39990073B81B /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,10 +131,13 @@
 		7AFE51892C5912250073B81B /* solarys-codetest */ = {
 			isa = PBXGroup;
 			children = (
+				7AFE51C92C5938140073B81B /* Info.plist */,
 				7AFE51C62C5927F30073B81B /* Networking */,
 				7AFE51B82C5925C40073B81B /* Models */,
 				7AFE518A2C5912250073B81B /* solarys_codetestApp.swift */,
-				7AFE518C2C5912250073B81B /* ContentView.swift */,
+				7AFE518C2C5912250073B81B /* MainView.swift */,
+				7AFE51C72C592B780073B81B /* DetailView.swift */,
+				7AFE51CE2C5C39990073B81B /* AudioManager.swift */,
 				7AFE518E2C5912270073B81B /* Assets.xcassets */,
 				7AFE51902C5912270073B81B /* Preview Content */,
 			);
@@ -162,6 +174,8 @@
 			children = (
 				7AFE51B92C59265A0073B81B /* Phonetic.swift */,
 				7AFE51C22C59272A0073B81B /* WordDetail.swift */,
+				7AFE51CA2C5A4D850073B81B /* Meaning.swift */,
+				7AFE51CC2C5A4DC70073B81B /* Definition.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -322,11 +336,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AFE51C32C59272A0073B81B /* WordDetail.swift in Sources */,
-				7AFE518D2C5912250073B81B /* ContentView.swift in Sources */,
+				7AFE51CD2C5A4DC70073B81B /* Definition.swift in Sources */,
+				7AFE518D2C5912250073B81B /* MainView.swift in Sources */,
 				7AFE518B2C5912250073B81B /* solarys_codetestApp.swift in Sources */,
+				7AFE51C82C592B780073B81B /* DetailView.swift in Sources */,
 				7AFE51B72C5922650073B81B /* DictionaryAPI.swift in Sources */,
 				7AFE51BA2C59265A0073B81B /* Phonetic.swift in Sources */,
 				7AFE51C52C5927A00073B81B /* DictionaryService.swift in Sources */,
+				7AFE51CF2C5C39990073B81B /* AudioManager.swift in Sources */,
+				7AFE51CB2C5A4D850073B81B /* Meaning.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +511,7 @@
 				DEVELOPMENT_TEAM = FZ9J437R93;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "solarys-codetest/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -526,6 +545,7 @@
 				DEVELOPMENT_TEAM = FZ9J437R93;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "solarys-codetest/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
