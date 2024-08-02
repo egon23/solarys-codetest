@@ -19,13 +19,13 @@ class DetailViewModel: ObservableObject {
         self.wordDetail = wordDetail
     }
     
-    func playPauseSound(for url: String, id: UUID) {
-        let completeUrl = url.hasPrefix("http") ? url : "https:\(url)"
+    func playPauseSound(for phonetic: Phonetic) {
+        let completeUrl = phonetic.audio!.hasPrefix("http") ? phonetic.audio! : "https:\(phonetic.audio!)"
         guard let url = URL(string: completeUrl) else {
             print("Invalid URL: \(completeUrl)")
             return
         }
-        currentPlayingPhoneticId = id
+        currentPlayingPhoneticId = phonetic.id
         
         if isPlaying {
             // Pause the audio

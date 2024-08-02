@@ -38,3 +38,14 @@ class DictionaryService {
         }
     }
 }
+
+// Mock
+class MockDictionaryService: DictionaryService {
+    var result: Result<WordDetail, Error>?
+    
+    override func fetchWordDetails(for word: String, completion: @escaping (Result<WordDetail, Error>) -> Void) {
+        if let result = result {
+            completion(result)
+        }
+    }
+}

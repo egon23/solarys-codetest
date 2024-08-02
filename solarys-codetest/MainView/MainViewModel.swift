@@ -13,9 +13,15 @@ class MainViewModel: ObservableObject {
     @Published var showingAlert = false
     @ObservedResults(WordDetail.self) var wordHistory
     
+    var dictionaryService: DictionaryService
+    
+    init(dictionaryService: DictionaryService = DictionaryService()) {
+        self.dictionaryService = dictionaryService
+    }
+    
     func searchWord() {
         guard !searchText.isEmpty else { return }
-        DictionaryService().fetchWordDetails(for: searchText) { result in
+        dictionaryService.fetchWordDetails(for: searchText) { result in
             switch result {
             case .success(_):
                 self.searchText = ""

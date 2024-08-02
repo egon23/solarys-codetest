@@ -45,7 +45,7 @@ struct DetailView: View {
                                 Spacer()
                                 
                                 if let audioURL = phonetic.audio {
-                                    audioPlayer(url: audioURL, id: phonetic.id)
+                                    audioPlayer(for: phonetic)
                                 }
                             }
                             .padding(.vertical, 4)
@@ -85,11 +85,11 @@ struct DetailView: View {
         }
     }
     
-    func audioPlayer(url: String, id: UUID) -> some View {
+    func audioPlayer(for phonetic: Phonetic) -> some View {
         return Button(action: {
-            viewModel.playPauseSound(for: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3", id: id)
+            viewModel.playPauseSound(for: phonetic)
         }) {
-            Image(systemName: (viewModel.isPlaying && viewModel.currentPlayingPhoneticId == id) ? "pause.circle" : "play.circle")
+            Image(systemName: (viewModel.isPlaying && viewModel.currentPlayingPhoneticId == phonetic.id) ? "pause.circle" : "play.circle")
                 .font(.title)
                 .foregroundColor(.blue)
         }
